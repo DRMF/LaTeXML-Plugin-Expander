@@ -9,7 +9,7 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
   NAME => 'LaTeXML::Plugin::WikiText',
-  AUTHOR => 'Lukas Kohlhase <email>',
+  AUTHOR => 'Moritz Schubotz <wiki@physikerwelt.de>',
   ABSTRACT => "LaTeXML::Plugin::Doc - A LaTeXML post-processor for WikiText",
   VERSION => '0.1',
   PREREQ_PM => {

@@ -1,9 +1,10 @@
-# Profile for Word generation
+# Profile for WikiText generation
 post =
-format = Odt
+format = WikiText
 whatsin = document
-whatsout = archive
+whatsout = document
 pmml =
+cmml =
 mathimages = 
 nodefaultresources = 
 path = $LATEXMLINPUTS
