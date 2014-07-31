@@ -1,8 +1,10 @@
 # Profile for WikiText generation
 post =
-format = WikiText
+format = html
+
 whatsin = document
 whatsout = document
+stylesheet = LaTeXML-wikiText.xsl
 pmml =
 cmml =
 mathimages = 

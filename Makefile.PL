@@ -13,7 +13,7 @@ WriteMakefile(
   ABSTRACT => "LaTeXML::Plugin::Doc - A LaTeXML post-processor for WikiText",
   VERSION => '0.1',
   PREREQ_PM => {
-    'LaTeXML' => '0.7.99',
+    'LaTeXML' => '0.8.0',
   },
   test => {TESTS => 't/*.t'}
 );
