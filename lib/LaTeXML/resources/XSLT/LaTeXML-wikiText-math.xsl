@@ -47,7 +47,7 @@
       <xsl:call-template name="add_id"/>
       <xsl:call-template name="add_attributes"/>
       <!-- but copy OTHER m:math attributes -->
-	<xsl:value-of select="@tex"/>
+	<xsl:value-of disable-output-escaping='yes' select="@tex"/>
     </xsl:element>
   </xsl:template>
 

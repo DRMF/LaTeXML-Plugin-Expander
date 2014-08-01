@@ -24,7 +24,7 @@
   -->
 
   <xsl:import href="LaTeXML-common.xsl"/>
-  <xsl:import href="LaTeXML-inline-xhtml.xsl"/>
+  <xsl:import href="LaTeXML-wikiText-xhtml.xsl"/>
   <xsl:import href="LaTeXML-block-xhtml.xsl"/>
   <xsl:import href="LaTeXML-misc-xhtml.xsl"/>
   <xsl:import href="LaTeXML-meta-xhtml.xsl"/>

@@ -42,7 +42,7 @@
                        | ltx:bibliography | ltx:appendix | ltx:index | ltx:glossary
                        | ltx:slide | ltx:sidebar">
     <xsl:text>&#x0A;</xsl:text>
-    <xsl:element name="div" namespace="{$html_ns}">
+    <xsl:element name="{f:if($USE_HTML5,'section','div')}" namespace="{$html_ns}">
       <xsl:call-template name="add_id"/>
       <xsl:call-template name="add_attributes"/>
       <xsl:apply-templates select="." mode="begin"/>
@@ -262,12 +262,12 @@
   <!-- Convert a title to an <h1>..<h6>, with appropriate classes and content.
        In html5, IFF section/article elements are used, we can (& should?) use only h1.
        The title chunk also contains authors, subtitles, etc. -->
-  <xsl:template name="maketitle"> <!-- {f:if($USE_HTML5,'h1',concat('h',f:section-head-level(parent::*)))}"-->
+  <xsl:template name="maketitle">
     <xsl:element
-        name="{f:if($USE_HTML5,'h1',concat('h',f:section-head-level(parent::*)))}" 
+        name="{f:if($USE_HTML5,'h1',concat('h',f:section-head-level(parent::*)))}"
         namespace="{$html_ns}">
-      <xsl:call-template name="add_id"/>
-      <xsl:call-template name="add_attributes"/>
+      <!--<xsl:call-template name="add_id"/>
+      <xsl:call-template name="add_attributes"/>-->
       <xsl:apply-templates select="." mode="begin"/>
       <xsl:apply-templates/>
     </xsl:element>

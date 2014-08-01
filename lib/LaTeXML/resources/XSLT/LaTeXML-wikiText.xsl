@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /=====================================================================\ 
-|  LaTeXML-html5.xsl                                                  |
+|  LaTeXML-wikiText.xsl                                                  |
 |  Stylesheet for converting LaTeXML documents to html5               |
 |=====================================================================|
 | Part of LaTeXML:                                                    |
@@ -23,10 +23,10 @@
 
   <!-- Override the output method & parameters -->
   <xsl:output
-      method = "html"
+      method = "text"
       omit-xml-declaration="yes"
       encoding       = 'utf-8'
-      media-type     = 'text/html'/>
+      media-type     = 'text/plain'/>
 
   <!-- No namespaces; DO not use HTML5 elements (include MathML & SVG) -->
   <xsl:param name="USE_NAMESPACES"  ></xsl:param>
