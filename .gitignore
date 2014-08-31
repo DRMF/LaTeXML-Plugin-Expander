@@ -20,3 +20,7 @@ schemas.xml
 x*.png
 *.tmp
 *.*~
+*.log
+*.aux
+*.synctex.gz
+

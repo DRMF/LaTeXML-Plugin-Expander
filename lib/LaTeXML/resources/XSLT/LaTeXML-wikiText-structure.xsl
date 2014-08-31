@@ -433,6 +433,25 @@
        ====================================================================== -->
 
   <xsl:strip-space elements="ltx:indexlist ltx:indexentry ltx:indexrefs"/>
+<!--<xsl:template name="search-and-replace">
+  <xsl:param name="input"/>
+  <xsl:param name="search-string"/>
+  <xsl:param name="replace-string"/>
+  <xsl:choose>
+    <xsl:when test="$search0string and contains($input,$search-string)">
+      <xsl:value-of select="substring-before($input,$search-string)"/>
+      <xsl:value-of select="$replace-string"/>
+      <xsl:call-template name="search-and-replace">
+        <xsl:with-param name="input" select="substring-after($input,$search-string)"/>
+        <xsl:with-param name="replace-string" select="$replace-string"/>
+      </xsl:call-template>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:value-of select=$input/>
+    </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+-->
 
   <xsl:template match="ltx:indexlist">
     <xsl:choose>
@@ -442,8 +461,8 @@
       <xsl:otherwise>
         <xsl:text>&#x0A;</xsl:text>
         <xsl:element name="ul" namespace="{$html_ns}">
-          <xsl:call-template name="add_id"/>
-          <xsl:call-template name="add_attributes"/>
+          <!--<xsl:call-template name="add_id"/>
+          <xsl:call-template name="add_attributes"/>-->
           <xsl:apply-templates select="." mode="begin"/>
           <xsl:apply-templates/>
           <xsl:apply-templates select="." mode="end"/>

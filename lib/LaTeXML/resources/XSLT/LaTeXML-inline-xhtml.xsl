@@ -39,42 +39,6 @@
   <!-- Special case: all OTHER attributes have to be outside the "hidden"
        in order to take effect (eg. background color, etc).
        Note that "contains" is NOT the right test for @class....-->
-  <xsl:template match="ltx:text[contains(@font,'bold')]">
-    <xsl:text>'''</xsl:text>
-        <!--<xsl:attribute name="style">visibility:hidden</xsl:attribute> -->
-        <xsl:apply-templates select="." mode="begin"/>
-        <xsl:apply-templates/>
-        <xsl:apply-templates select="." mode="end"/>
-      <xsl:text>'''</xsl:text>
-  </xsl:template>
-
-  <xsl:template match="ltx:text[contains(@font,'italic')]">
-    <xsl:text>''</xsl:text>
-        <!--<xsl:attribute name="style">visibility:hidden</xsl:attribute> -->
-        <xsl:apply-templates select="." mode="begin"/>
-        <xsl:apply-templates/>
-        <xsl:apply-templates select="." mode="end"/>
-      <xsl:text>''</xsl:text>
-  </xsl:template>
-  <xsl:template match="ltx:text[contains(@fontsize,'small')]">
-    <xsl:element name="small">
-        <!--<xsl:attribute name="style">visibility:hidden</xsl:attribute> -->
-        <xsl:apply-templates select="." mode="begin"/>
-        <xsl:apply-templates/>
-        <xsl:apply-templates select="." mode="end"/>
-      </xsl:element>
-  </xsl:template>
-  <xsl:template match="ltx:text[contains(@fontsize,'large')]">
-    <xsl:element name="big">
-        <!--<xsl:attribute name="style">visibility:hidden</xsl:attribute> -->
-        <xsl:apply-templates select="." mode="begin"/>
-        <xsl:apply-templates/>
-        <xsl:apply-templates select="." mode="end"/>
-      </xsl:element>
-  </xsl:template>
-  <!-- Special case: all OTHER attributes have to be outside the "hidden"
-       in order to take effect (eg. background color, etc).
-       Note that "contains" is NOT the right test for @class....-->
   <xsl:template match="ltx:text[contains(@class,'ltx_phantom')]">
     <xsl:element name="span" namespace="{$html_ns}">
       <xsl:call-template name="add_id"/>
@@ -173,11 +137,8 @@
           <xsl:apply-templates select="." mode="end"/>
         </xsl:element>
       </xsl:when>
-      <xsl:otherwise><!--
-	    <xsl:text>[[<xsl:text>
-		<xsl:value-of select="f:url(@href)"/>
-	    <xsl:text>]]<xsl:text>-->
-        <xsl:element name="span" namespace="{$html_ns}">
+      <xsl:otherwise>
+        <xsl:element name="a" namespace="{$html_ns}">
           <xsl:attribute name="href"><xsl:value-of select="f:url(@href)"/></xsl:attribute>
           <xsl:attribute name="title"><xsl:value-of select="@title"/></xsl:attribute>
           <xsl:call-template name="add_id"/>
@@ -185,7 +146,7 @@
           <xsl:apply-templates select="." mode="begin"/>
           <xsl:apply-templates/>
           <xsl:apply-templates select="." mode="end"/>
-        </xsl:element><!---->
+        </xsl:element>
       </xsl:otherwise>
     </xsl:choose>    
   </xsl:template>
@@ -201,19 +162,14 @@
   </xsl:template>
 
   <xsl:template match="ltx:anchor">
-	<!--<xsl:element name="span" namespace="{$html_ns}">
-	    <xsl:text>[[<xsl:text>
-		<xsl:value-of select="f:url(@href)"/>
-	    <xsl:text>]]<xsl:text>
-	</xsl:element>-->
-    <xsl:element name="span" namespace="{$html_ns}">
+    <xsl:element name="a" namespace="{$html_ns}">
       <xsl:attribute name="name"><xsl:value-of select="@xml:id"/></xsl:attribute>
       <xsl:call-template name="add_id"/>
       <xsl:call-template name="add_attributes"/>
       <xsl:apply-templates select="." mode="begin"/>
       <xsl:apply-templates/>
       <xsl:apply-templates select="." mode="end"/>
-    </xsl:element><!---->
+    </xsl:element>
   </xsl:template>
 
   <xsl:template match="ltx:cite">

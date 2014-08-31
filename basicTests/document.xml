@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?latexml searchpaths="/vagrant/LaTeXML-Plugin-WikiText/basicTests"?>
+<?latexml class="article" options="10pt,a4paper"?>
+<?latexml package="inputenc" options="latin1"?>
+<?latexml package="amsmath"?>
+<?latexml package="amsfonts"?>
+<?latexml package="amssymb"?>
+<?latexml package="graphicx"?>
+<?latexml RelaxNGSchema="LaTeXML"?>
+<document xmlns="http://dlmf.nist.gov/LaTeXML">
+  <resource src="LaTeXML.css" type="text/css"/>
+  <resource src="ltx-article.css" type="text/css"/>
+  <!-- %“title–Testing “LaTeX“ Stuff Title˝ 
+     %“author–Person˝
+     %“date–Date˝
+     %“maketitle–˝-->
+  <paragraph xml:id="S0.SS0.SSS0.Px1">
+    <title font="bold">bold text</title>
+  </paragraph>
+  <paragraph xml:id="S0.SS0.SSS0.Px2">
+    <title font="italic">italic text</title>
+    <!-- %“begin–equation˝ 
+     %x=“frac–-b“pm“sqrt–b^–2˝-4ac˝˝–2a˝
+     %“end–equation˝
+     %“begin–equation˝
+     %“lim˙–x “rightarrow c˝ f(x)=L “Leftrightarrow “forall “varepsilon “ %“exists  “delta “ni“ “mid c-“delta “mid “ “leq “ “mid L-“epsilon “mid
+     %“end–equation˝-->
+  </paragraph>
+  <section refnum="1" xml:id="S1">
+    <title><tag close=" ">1</tag>section1</title>
+    <subsection refnum="1.1" xml:id="S1.SS1">
+      <title><tag close=" ">1.1</tag>subsection2</title>
+      <subsubsection refnum="1.1.1" xml:id="S1.SS1.SSS1">
+        <title><tag close=" ">1.1.1</tag>level3</title>
+      </subsubsection>
+    </subsection>
+  </section>
+  <section refnum="2" xml:id="S2">
+    <title><tag close=" ">2</tag>level 2</title>
+    <subsection refnum="2.1" xml:id="S2.SS1">
+      <title><tag close=" ">2.1</tag>level3</title>
+      <!-- %**** document.tex Line 25 **** -->
+      <para xml:id="S2.SS1.p1">
+        <verbatim font="typewriter">
+``ignore''
+</verbatim>
+        <!-- %‘‘don’t ignore’’ -->
+        <itemize xml:id="I1">
+          <item xml:id="I1.i1">
+            <tag>•</tag>
+            <para xml:id="I1.i1.p1">
+              <p>bullet1</p>
+            </para>
+          </item>
+          <item xml:id="I1.i2">
+            <tag>•</tag>
+            <para xml:id="I1.i2.p1">
+              <p>bullet2</p>
+              <enumerate xml:id="I1.I1">
+                <item frefnum="(a)" refnum="a" xml:id="I1.I1.i1">
+                  <tag>(a)</tag>
+                  <para xml:id="I1.I1.i1.p1">
+                    <p>number1</p>
+                  </para>
+                </item>
+                <item frefnum="(b)" refnum="b" xml:id="I1.I1.i2">
+                  <tag>(b)</tag>
+                  <para xml:id="I1.I1.i2.p1">
+                    <p>number2</p>
+                  </para>
+                </item>
+              </enumerate>
+            </para>
+          </item>
+        </itemize>
+        <p>line one <break/>line two <break/><Math mode="inline" xml:id="S2.SS1.p1.m1" tex="e^{i\pi}=-1" text="e ^ (i * pi) = - 1"><XMath><XMApp><XMTok meaning="equals" role="RELOP">=</XMTok><XMApp><XMTok role="SUPERSCRIPTOP" scriptpos="post2"/><XMTok role="UNKNOWN" font="italic">e</XMTok><XMApp><XMTok meaning="times" role="MULOP">⁢</XMTok><XMTok role="UNKNOWN" font="italic">i</XMTok><XMTok name="pi" role="UNKNOWN" font="italic">π</XMTok></XMApp></XMApp><XMApp><XMTok meaning="minus" role="ADDOP">-</XMTok><XMTok meaning="1" role="NUMBER">1</XMTok></XMApp></XMApp></XMath></Math></p>
+        <p align="center">centered text</p>
+        <p><text fontsize="large">BIG TEXT</text>
+<text fontsize="small">small text</text></p>
+      </para>
+    </subsection>
+  </section>
+</document>
