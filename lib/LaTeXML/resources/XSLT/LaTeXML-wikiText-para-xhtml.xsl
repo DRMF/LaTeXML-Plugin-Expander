@@ -26,7 +26,7 @@
 
   <xsl:strip-space elements="ltx:para ltx:inline-para"/>
 
-  <!--<xsl:template match="ltx:para">
+  <xsl:template match="ltx:para">
     <xsl:text>&#x0A;</xsl:text>
     <xsl:element name="div" namespace="{$html_ns}">
       <xsl:call-template name="add_id"/>
@@ -37,7 +37,7 @@
       <xsl:text>&#x0A;</xsl:text>
     </xsl:element>
   </xsl:template>
--->
+
   <xsl:template match="ltx:inline-para">
     <xsl:element name="span" namespace="{$html_ns}">
       <xsl:call-template name="add_id"/>
