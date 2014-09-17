@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?latexml searchpaths="/vagrant/LaTeXML-Plugin-WikiText/basicTests/Nine tests"?>
+<?latexml class="article" options="10pt,a4paper"?>
+<?latexml package="inputenc" options="latin1"?>
+<?latexml package="amsmath"?>
+<?latexml package="amsfonts"?>
+<?latexml package="amssymb"?>
+<?latexml package="graphicx"?>
+<?latexml RelaxNGSchema="LaTeXML"?>
+<document xmlns="http://dlmf.nist.gov/LaTeXML">
+  <resource src="LaTeXML.css" type="text/css"/>
+  <resource src="ltx-article.css" type="text/css"/>
+  <section refnum="1" xml:id="S1">
+    <title><tag close=" ">1</tag>section1</title>
+    <subsection refnum="1.1" xml:id="S1.SS1">
+      <title><tag close=" ">1.1</tag>subsection2</title>
+      <subsubsection refnum="1.1.1" xml:id="S1.SS1.SSS1">
+        <title><tag close=" ">1.1.1</tag>level3</title>
+      </subsubsection>
+    </subsection>
+  </section>
+  <section refnum="2" xml:id="S2">
+    <title><tag close=" ">2</tag>level 2</title>
+    <subsection refnum="2.1" xml:id="S2.SS1">
+      <title><tag close=" ">2.1</tag>level3</title>
+    </subsection>
+  </section>
+</document>

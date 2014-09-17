@@ -68,7 +68,7 @@
        NOTE: Can I make a template to add namespace prefix declarations here?
        Then $USE_NAMESPACES .. ? Do the experiment!!
   -->
-<!--
+
   <xsl:template match="/" mode="doctype"/>
 
   <xsl:template match="/">
@@ -82,7 +82,7 @@
       <xsl:text>&#x0A;</xsl:text>
     </xsl:element>
   </xsl:template>
--->
+
   <!--  ======================================================================
        The <head>
        ====================================================================== -->
@@ -538,8 +538,8 @@
   <xsl:template match="ltx:toclist">
     <xsl:text>&#x0A;</xsl:text>
     <xsl:element name="ul" namespace="{$html_ns}">
-      <!--<xsl:call-template name='add_id'/>
-      <xsl:call-template name='add_attributes'/>-->
+      <xsl:call-template name='add_id'/>
+      <xsl:call-template name='add_attributes'/>
       <xsl:apply-templates/>
       <xsl:text>&#x0A;</xsl:text>
     </xsl:element>
@@ -548,8 +548,8 @@
   <xsl:template match="ltx:tocentry">
     <xsl:text>&#x0A;</xsl:text>
     <xsl:element name="li" namespace="{$html_ns}">
-     <!-- <xsl:call-template name='add_id'/>
-      <xsl:call-template name='add_attributes'/>-->
+      <xsl:call-template name='add_id'/>
+      <xsl:call-template name='add_attributes'/>
       <xsl:apply-templates/>
     </xsl:element>
   </xsl:template>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /=====================================================================\ 
-|  LaTeXML-all-xhtml.xsl                                              |
-|  Combine all modules for converting LaTeXML documents to xhtml      |
+|  LaTeXML-xhtml.xsl                                                  |
+|  Stylesheet for converting LaTeXML documents to xhtml               |
 |=====================================================================|
 | Part of LaTeXML:                                                    |
 |  Public domain software, produced as part of work done by the       |
@@ -19,20 +19,16 @@
     exclude-result-prefixes = "ltx">
 
   <!-- Include all LaTeXML to xhtml modules -->
-  <!-- Note that you can include these in your own stylesheet using urns like:
-       <xsl:import href="urn:x-LaTeXML:XSLT:LaTeXML-common.xsl"/>
-  -->
+  <xsl:import href="LaTeXML-all-xhtml.xsl"/>
 
-  <xsl:import href="LaTeXML-wikiText-common.xsl"/>
-  <xsl:import href="LaTeXML-wikiText-xhtml.xsl"/>
-  <xsl:import href="LaTeXML-wikiText-block-xhtml.xsl"/>
-  <xsl:import href="LaTeXML-misc-xhtml.xsl"/>
-  <xsl:import href="LaTeXML-meta-xhtml.xsl"/>
-  <xsl:import href="LaTeXML-wikiText-para-xhtml.xsl"/>
-  <xsl:import href="LaTeXML-wikiText-math.xsl"/>
-  <xsl:import href="LaTeXML-tabular-xhtml.xsl"/>
-  <xsl:import href="LaTeXML-picture-xhtml.xsl"/>
-  <xsl:import href="LaTeXML-wikiText-structure.xsl"/>
-  <xsl:import href="LaTeXML-bib-xhtml.xsl"/>
-  <xsl:import href="LaTeXML-wikiText-webpage.xsl"/>
+  <xsl:output method="xml"
+              doctype-public = "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN"
+              doctype-system = "http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd"
+              media-type     = 'application/xhtml+xml'
+              encoding       = 'utf-8'/>
+
+  <!-- Note: If you want namespace prefixes (eg. for MathML & SVG),
+       Redefine the root template ("/") and add prefixed namespace declarations
+       (eg.xmlns:m="http://www.w3.org/1998/Math/MathML") -->
+  
 </xsl:stylesheet>

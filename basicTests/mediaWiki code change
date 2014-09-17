@@ -1,0 +1,26 @@
+Main Page wikiText:
+'''bold text''' <br/> ''italic text''
+==section1 ==
+===subsection2 ===
+==== level3 ====
+<pre>''ignores''</pre>
+* bullet1
+* bullet2 
+#number1
+#number2
+line one <br/> line two <br/>
+<math>e^{i \pi} = -1</math>
+<center>centered text</center>
+<big> BIG TEXT </big>
+<small> small text </small>
+
+1. General: remove paragraph tags (<p>)
+2. bold text: remove div elements, not h4, triple apostrophe
+3. italic text: remove div elements, not h4, double apostrophe
+4. sections/subsections/subsubsection: remove div elements, instead of diferrent heading types use the == notation
+5. pre: remove class info
+6. bullets and numbering: use * and # instead of ul/li, remove div elements and class
+7. line one/line two: remove class info
+8. math: remove class and id
+9. centered text: use <center> instead of class
+10. fontSize: use <big> and <small> instead of span class

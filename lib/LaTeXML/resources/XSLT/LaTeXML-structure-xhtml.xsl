@@ -266,8 +266,8 @@
     <xsl:element
         name="{f:if($USE_HTML5,'h1',concat('h',f:section-head-level(parent::*)))}"
         namespace="{$html_ns}">
-      <!--<xsl:call-template name="add_id"/>
-      <xsl:call-template name="add_attributes"/>-->
+      <xsl:call-template name="add_id"/>
+      <xsl:call-template name="add_attributes"/>
       <xsl:apply-templates select="." mode="begin"/>
       <xsl:apply-templates/>
     </xsl:element>

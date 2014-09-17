@@ -23,16 +23,16 @@
        <xsl:import href="urn:x-LaTeXML:XSLT:LaTeXML-common.xsl"/>
   -->
 
-  <xsl:import href="LaTeXML-wikiText-common.xsl"/>
-  <xsl:import href="LaTeXML-wikiText-xhtml.xsl"/>
-  <xsl:import href="LaTeXML-wikiText-block-xhtml.xsl"/>
+  <xsl:import href="LaTeXML-common.xsl"/>
+  <xsl:import href="LaTeXML-inline-xhtml.xsl"/>
+  <xsl:import href="LaTeXML-block-xhtml.xsl"/>
   <xsl:import href="LaTeXML-misc-xhtml.xsl"/>
   <xsl:import href="LaTeXML-meta-xhtml.xsl"/>
-  <xsl:import href="LaTeXML-wikiText-para-xhtml.xsl"/>
-  <xsl:import href="LaTeXML-wikiText-math.xsl"/>
+  <xsl:import href="LaTeXML-para-xhtml.xsl"/>
+  <xsl:import href="LaTeXML-math-xhtml.xsl"/>
   <xsl:import href="LaTeXML-tabular-xhtml.xsl"/>
   <xsl:import href="LaTeXML-picture-xhtml.xsl"/>
-  <xsl:import href="LaTeXML-wikiText-structure.xsl"/>
+  <xsl:import href="LaTeXML-structure-xhtml.xsl"/>
   <xsl:import href="LaTeXML-bib-xhtml.xsl"/>
-  <xsl:import href="LaTeXML-wikiText-webpage.xsl"/>
+  <xsl:import href="LaTeXML-webpage-xhtml.xsl"/>
 </xsl:stylesheet>

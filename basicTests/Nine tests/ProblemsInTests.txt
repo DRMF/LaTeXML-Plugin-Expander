@@ -1,0 +1,26 @@
+Problems (html):
+autoindenting first line for man files
+Bullets: still giving letters instead of numbers
+
+Problems Not Apparent:
+Text does get centered
+Font Size changes correctly
+
+Problems (wikiText):
+Font Size does not change
+No centering
+bullets on different lines, letters instead of numbers, double bullets
+bold and italic text not working
+
+Problems Fixed:
+Bold and italic
+Text Sizes
+Centered Text
+Bullets Same Line
+
+Problems with original xml:
+Bullets
+
+commands used:
+wikiText: same as in readme
+html: same command except removed --format=html5 and instead of > used --destination=
