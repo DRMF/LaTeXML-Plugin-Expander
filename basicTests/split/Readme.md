@@ -19,7 +19,7 @@ Process:
     </xsl:if>
 ```
 
-If a comment was found, it would select the data in the comment and place in a <p> tag.
+If a comment was found, it would select the data in the comment and place in a paragraph tag.
     
 Bugs:
   latexml creates comments for every 25 lines in .tex files so if this happens to be after a math tag, this is also included.
