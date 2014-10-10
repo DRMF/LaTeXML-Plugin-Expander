@@ -31,3 +31,8 @@
    			2. Create individual tests
    			3. Plan implementation
    	3. Implement changes (to be specified later)
+   	
+   	
+   Solutions:
+      The XSLT stylesheets were modified to check for cases including bold and italic text, headings, small and big text, and centered text. When these were found, new elements were created. All div elements were commented out and so were most attributes and id's. I also needed to remove the creation of list elements when encountering enumerate and itemize and instead took the data and added a '*' or '#' in front of it as appropriate.
+      There were also changes to create a way to split the file at math elements and include comments, further described in the split folder.
