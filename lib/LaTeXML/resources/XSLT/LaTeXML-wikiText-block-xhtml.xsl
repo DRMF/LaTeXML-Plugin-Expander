@@ -27,23 +27,24 @@
        ltx:listingblock, ltx:itemize, ltx:enumerate, ltx:description
        ====================================================================== -->
   <xsl:template match="ltx:p">
-    <xsl:text>&#x0A;</xsl:text>
     <!--<xsl:element name="rt" namespace="{$html_ns}">-->
      <!--<xsl:call-template name="add_id"/>
       <xsl:call-template name="add_attributes"/>-->
       <!--<xsl:value-of select="." mode="begin"/>-->
       <xsl:apply-templates/>
+<xsl:text>&#x0A;</xsl:text>
       <!--<xsl:apply-templates select="." mode="end"/>-->
     <!--</xsl:element>-->
   </xsl:template>
   <xsl:template match="ltx:p[@align='center']">
     <xsl:element name="center" namespace="{$html_ns}">
-    	<xsl:call-template name="add_id"/>
-    	<xsl:call-template name="add_attributes"/>
+    	<!--<xsl:call-template name="add_id"/>
+    	<xsl:call-template name="add_attributes"/>-->
     	<!--<xsl:value-of select="." mode="begin"/>-->
     	<xsl:apply-templates/>
     	<!--<xsl:apply-templates select="." mode="end"/>-->
     </xsl:element>
+<xsl:text>&#x0A;</xsl:text>
   </xsl:template>
   <xsl:strip-space elements="ltx:quote"/>
 
@@ -63,28 +64,28 @@
 
   <xsl:template match="ltx:block">
    <xsl:text>&#x0A;</xsl:text>
-    <xsl:element name="div" namespace="{$html_ns}">
+    <!--<xsl:element name="div" namespace="{$html_ns}">
       <xsl:call-template name="add_id"/>l
       <xsl:call-template name="add_attributes"/>
-      <xsl:apply-templates select="." mode="begin"/>
+      <xsl:apply-templates select="." mode="begin"/>-->
       <xsl:apply-templates/>
-      <xsl:apply-templates select="." mode="end"/>
+      <!--<xsl:apply-templates select="." mode="end"/>
       <xsl:text>&#x0A;</xsl:text>
-    </xsl:element>
+    </xsl:element>-->
   </xsl:template>
   <xsl:strip-space elements="ltx:listingblock"/>
 
  <xsl:template match="ltx:listingblock">
     <xsl:text>&#x0A;</xsl:text>
-    <xsl:element name="div" namespace="{$html_ns}">
+    <!--<xsl:element name="div" namespace="{$html_ns}">
      <xsl:call-template name="add_id"/>
       <xsl:call-template name="add_attributes">
       </xsl:call-template>
-      <xsl:apply-templates select="." mode="begin"/>
+      <xsl:apply-templates select="." mode="begin"/>-->
       <xsl:apply-templates/>
-      <xsl:apply-templates select="." mode="end"/>
+      <!--<xsl:apply-templates select="." mode="end"/>
    <xsl:text>&#x0A;</xsl:text>
-    </xsl:element>
+    </xsl:element>-->
   </xsl:template>
 
   <xsl:template match="ltx:listingblock" mode="classes">
@@ -184,14 +185,14 @@
   <!-- ======================================================================
        Unaligned templates -->
 
-  <!--<xsl:template match="*" mode="unaligned-begin"/>
+<xsl:template match="*" mode="unaligned-begin"/>
   <xsl:template match="*" mode="unaligned-end"/>
 
   <xsl:template match="ltx:equationgroup" mode="unaligned">
     <xsl:param name="eqnopos"
                select="f:if(ancestor-or-self::*[contains(@class,'ltx_leqno')],'left','right')"/>
     <xsl:text>&#x0A;</xsl:text>
-    <xsl:element name="div" namespace="{$html_ns}">
+    <!--<xsl:element name="div" namespace="{$html_ns}">
       <xsl:call-template name="add_id"/>
       <xsl:call-template name="add_attributes"/>
       <xsl:apply-templates select="." mode="begin"/>
@@ -206,40 +207,46 @@
       <xsl:apply-templates select="." mode="constraints"/>
       <xsl:apply-templates select="." mode="unaligned-end"/>
       <xsl:apply-templates select="." mode="end"/>
-   <<xsl:text>&#x0A;</xsl:text>
-    </xsl:element>
+   <xsl:text>&#x0A;</xsl:text>
+    </xsl:element>-->
   </xsl:template>
--->
- <!-- <xsl:template match="ltx:equation" mode="unaligned">
+
+<xsl:template match="ltx:equation" mode="unaligned">
     <xsl:param name="eqnopos"
                select="f:if(ancestor-or-self::*[contains(@class,'ltx_leqno')],'left','right')"/>
     <xsl:text>&#x0A;</xsl:text>
-   <xsl:element name="div" namespace="{$html_ns}">
+   <!--<xsl:element name="div" namespace="{$html_ns}">
       <xsl:call-template name="add_id"/>
       <xsl:call-template name="add_attributes"/>
       <xsl:apply-templates select="." mode="begin"/>
       <xsl:apply-templates select="." mode="unaligned-begin"/>
       <xsl:if test="@refnum and $eqnopos='left'">
         <xsl:apply-templates select="@refnum"/>
-      </xsl:if>
-      <xsl:element name="span" namespace="{$html_ns}">
-        <This should cover: ltx:Math, ltx:MathFork, ltx:text & Misc
-             (ie. all of equation_model EXCEPT Meta & EquationMeta)
+      </xsl:if>-->
+      <!--<xsl:element name="span" namespace="{$html_ns}">-->
+        <!--<This should cover: ltx:Math, ltx:MathFork, ltx:text & Misc
+             (ie. all of equation_model EXCEPT Meta & EquationMeta)-->
         <xsl:apply-templates select="ltx:Math | ltx:MathFork | ltx:text
                                      | ltx:inline-block | ltx:verbatim | ltx:break 
                                      | ltx:graphics | ltx:svg | ltx:rawhtml | ltx:inline-para
                                      | ltx:tabular | ltx:picture" />
-      </xsl:element>
-      <xsl:if test="@refnum and $eqnopos='right'">
+      <!--</xsl:element>-->
+      <!--<xsl:if test="@refnum and $eqnopos='right'">
         <xsl:apply-templates select="@refnum"/>
       </xsl:if>
       <xsl:apply-templates select="." mode="constraints"/>
       <xsl:apply-templates select="." mode="unaligned-end"/>
-      <xsl:apply-templates select="." mode="end"/>
+      <xsl:apply-templates select="." mode="end"/>-->
      <xsl:text>&#x0A;</xsl:text>
-      </xsl:element>
+      <!--</xsl:element>-->
+	<!-- <xsl:if test="following-sibling::comment()[1]">
+	         <xsl:element name="p">
+		    <xsl:value-of select="following-sibling:comment()[1]"/>
+		    </xsl:element>
+	 </xsl:if>-->
+
   </xsl:template>
--->
+
   <xsl:template match="ltx:equationgroup|ltx:equation" mode="constraints">
     <xsl:apply-templates select="ltx:constraint[not(@hidden='true')]"/>
   </xsl:template>
@@ -630,7 +637,7 @@ ancestor-or-self::ltx:equationgroup[position()=1][@refnum]/descendant::ltx:equat
                  This should cover: ltx:Math, ltx:text & Misc
                  (ie. all of equation_model EXCEPT Meta & EquationMeta) -->
             <xsl:apply-templates select="ltx:Math | ltx:text
-                                         | ltx:inline-block | ltx:verbatim | ltx:break 
+                                         | ltx:inline-block | ltx:verbatim 
                                          | ltx:graphics | ltx:svg | ltx:rawhtml | ltx:inline-para
                                          | ltx:tabular | ltx:picture" />
           </xsl:element>
@@ -722,34 +729,46 @@ ancestor-or-self::ltx:equationgroup[position()=1][@refnum]/descendant::ltx:equat
 </xsl:template>
 <xsl:template match="tag"/>-->
 <xsl:template match="ltx:itemize">
-  <!--<xsl:for-each select="item">
-    <xsl:for-each select="tag">
-
-    </xsl:for-each>
-  </xsl:for-each>-->
+  <xsl:for-each select="ltx:item">
+    <!--<xsl:text>&#x0A;</xsl:text>-->
+<xsl:text>*</xsl:text>
+<xsl:apply-templates select="*[local-name() != 'tag']"/>
+  </xsl:for-each>
     <!--<xsl:text>&#x0A;</xsl:text>-->
     <!--<xsl:for-each select='./item/para/p'/>-->
     
-    <xsl:element name="ul" namespace="{$html_ns}">
-      <!--<xsl:value-of select=""/>-->
-      <!--<xsl:call-template name="add_id"/>
-      <xsl:call-template name="add_attributes"/>-->
+   <!-- <xsl:element name="ul" namespace="{$html_ns}">
+      <!-<xsl:value-of select=""/>->
+      <!-<xsl:call-template name="add_id"/>
+      <xsl:call-template name="add_attributes"/>->
       <xsl:apply-templates select="." mode="begin"/>
       <xsl:apply-templates/>
       <xsl:apply-templates select="." mode="end"/>
-      <!--<xsl:text>&#x0A;</xsl:text>-->
-    </xsl:element>
+      <xsl:text>&#x0A;</xsl:text>
+    </xsl:element>-->
 </xsl:template>
   <xsl:template match="ltx:enumerate">
-    <!--<xsl:text>&#x0A;</xsl:text>-->
-    <xsl:element name="ol" namespace="{$html_ns}">
+    
+    <xsl:for-each select="ltx:item">
+    <!--<xsl:choose>
+
+    <xsl:when test="child::ltx:item">-->
+<!--<xsl:text>&#x0A;</xsl:text>-->
+<xsl:text>#</xsl:text>
+<xsl:apply-templates select="*[local-name() != 'tag']"/>
+	<!--</xsl:when>
+    <xsl:otherwise>
+    <xsl:element name="ol" namespace="{$html_ns}">-->
       <!--<xsl:call-template name="add_id"/>
       <xsl:call-template name="add_attributes"/>-->
-      <xsl:apply-templates select="." mode="begin"/>
+      <!--<xsl:apply-templates select="." mode="begin"/>
       <xsl:apply-templates/>
       <xsl:apply-templates select="." mode="end"/>
-      <!--<xsl:text>&#x0A;</xsl:text>-->
+      <xsl:text>&#x0A;</xsl:text>
     </xsl:element>
+  </xsl:otherwise>
+</xsl:choose>-->
+</xsl:for-each>
   </xsl:template>
 
   <xsl:template match="ltx:description">
@@ -768,7 +787,7 @@ ancestor-or-self::ltx:equationgroup[position()=1][@refnum]/descendant::ltx:equat
     <!--<xsl:text>&#x0A;</xsl:text>-->
     <xsl:choose>
       <xsl:when test="child::ltx:tag">
-        <xsl:element name="li" namespace="{$html_ns}">
+        <!--<xsl:element name="li" namespace="{$html_ns}">-->
          <!-- <xsl:call-template name="add_id"/>
           <xsl:call-template name="add_attributes">
             <xsl:with-param name="extra_style" select="'list-style-type:none;'"/>
@@ -778,7 +797,7 @@ ancestor-or-self::ltx:equationgroup[position()=1][@refnum]/descendant::ltx:equat
           <xsl:text></xsl:text>
           <xsl:apply-templates select="*[local-name() != 'tag']"/>
           <xsl:apply-templates select="." mode="end"/>
-        </xsl:element>
+        <!--</xsl:element>-->
       </xsl:when>
       <xsl:when test="@frefnum">
         <xsl:element name="li" namespace="{$html_ns}">
@@ -838,9 +857,9 @@ ancestor-or-self::ltx:equationgroup[position()=1][@refnum]/descendant::ltx:equat
   <!-- Tricky, perhaps: ltx:tag is typically within a title or caption
        so it's the GRANDPARENT's type we want to use here!-->
   <xsl:template match="ltx:tag" mode="classes">
-    <xsl:apply-imports/>
+    <!--<xsl:apply-imports/>-->
     <xsl:text> </xsl:text>
-    <xsl:value-of select="concat('ltx_tag_',local-name(../..))"/>
+    <!--<xsl:value-of select="concat('ltx_tag_',local-name(../..))"/>-->
   </xsl:template>
 
   <!-- Inline forms of the above simply generate running text. -->

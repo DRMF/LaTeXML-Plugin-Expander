@@ -31,10 +31,10 @@
        Document Structure
        ====================================================================== -->
 
-  <xsl:strip-space elements="ltx:document ltx:part ltx:chapter ltx:section ltx:subsection
+  <!--<xsl:strip-space elements="ltx:document ltx:part ltx:chapter ltx:section ltx:subsection
                              ltx:subsubsection ltx:paragraph ltx:subparagraph
                              ltx:bibliography ltx:appendix ltx:index ltx:glossary
-                             ltx:slide ltx:sidebar"/>
+                             ltx:slide ltx:sidebar"/>-->
 
   <xsl:template match="ltx:document  | ltx:part | ltx:chapter
                        | ltx:section | ltx:subsection | ltx:subsubsection
@@ -52,6 +52,13 @@
     </xsl:element>
   </xsl:template>
 
+  <!--<xsl:template match="ltx:section">
+	<xsl:text>==</xsl:text>
+	<xsl:apply-templates select="." mode="begin"/>
+        <xsl:apply-templates/>
+        <xsl:apply-templates select="." mode="end"/>
+  </xsl:template>-->
+  
 
   <xsl:template match="ltx:abstract">
     <xsl:text>&#x0A;</xsl:text>

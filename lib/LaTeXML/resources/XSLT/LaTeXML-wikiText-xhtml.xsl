@@ -26,6 +26,9 @@
        ltx:anchor, ltx:ref, ltx:cite, ltx:bibref
        ====================================================================== -->
 
+<xsl:template match="ltx:paragraph">
+	<xsl:apply-templates/>
+</xsl:template>
   <xsl:template match="ltx:text">
     <xsl:element name="span" namespace="{$html_ns}">
       <xsl:call-template name="add_id"/>
@@ -56,6 +59,23 @@
         <xsl:apply-templates select="." mode="end"/>
       <xsl:text>''</xsl:text>
   </xsl:template>
+<xsl:template match="ltx:title[contains(@font,'bold')]">
+    <xsl:text>'''</xsl:text>
+        <!--<xsl:attribute name="style">visibility:hidden</xsl:attribute> -->
+        <xsl:apply-templates select="." mode="begin"/>
+        <xsl:apply-templates/>
+        <xsl:apply-templates select="." mode="end"/>
+      <xsl:text>'''</xsl:text>
+  </xsl:template>
+
+  <xsl:template match="ltx:title[contains(@font,'italic')]">
+    <xsl:text>''</xsl:text>
+        <!--<xsl:attribute name="style">visibility:hidden</xsl:attribute> -->
+        <xsl:apply-templates select="." mode="begin"/>
+        <xsl:apply-templates/>
+        <xsl:apply-templates select="." mode="end"/>
+      <xsl:text>''</xsl:text>
+  </xsl:template>
   <xsl:template match="ltx:text[contains(@fontsize,'small')]">
     <xsl:element name="small">
         <!--<xsl:attribute name="style">visibility:hidden</xsl:attribute> -->
@@ -71,6 +91,7 @@
         <xsl:apply-templates/>
         <xsl:apply-templates select="." mode="end"/>
       </xsl:element>
+<xsl:text>&#x0A;</xsl:text>
   </xsl:template>
   <!-- Special case: all OTHER attributes have to be outside the "hidden"
        in order to take effect (eg. background color, etc).

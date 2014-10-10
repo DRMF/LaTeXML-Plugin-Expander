@@ -26,7 +26,7 @@
   <xsl:import href="LaTeXML-wikiText-common.xsl"/>
   <xsl:import href="LaTeXML-wikiText-xhtml.xsl"/>
   <xsl:import href="LaTeXML-wikiText-block-xhtml.xsl"/>
-  <xsl:import href="LaTeXML-misc-xhtml.xsl"/>
+  <xsl:import href="LaTeXML-wikiText-misc-xhtml.xsl"/>
   <xsl:import href="LaTeXML-meta-xhtml.xsl"/>
   <xsl:import href="LaTeXML-wikiText-para-xhtml.xsl"/>
   <xsl:import href="LaTeXML-wikiText-math.xsl"/>

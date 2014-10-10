@@ -36,7 +36,7 @@
                              ltx:bibliography ltx:appendix ltx:index ltx:glossary
                              ltx:slide ltx:sidebar"/>
 
-  <xsl:template match="ltx:document  | ltx:part | ltx:chapter
+ <!-- <xsl:template match="ltx:document  | ltx:part | ltx:chapter
                        | ltx:section | ltx:subsection | ltx:subsubsection
                        | ltx:paragraph | ltx:subparagraph
                        | ltx:bibliography | ltx:appendix | ltx:index | ltx:glossary
@@ -50,8 +50,35 @@
       <xsl:apply-templates select="." mode="end"/>
       <xsl:text>&#x0A;</xsl:text>
     </xsl:element>
+  </xsl:template>-->
+  <xsl:template match="ltx:section">
+	<xsl:text>==</xsl:text>
+	<!--<xsl:apply-templates select="*[local-name() != 'tag']"/>-->
+	
+	<xsl:value-of select="string(./ltx:title/text())"/> 
+	<xsl:text>==</xsl:text>
+<xsl:text>&#x0A;</xsl:text>
+	<xsl:apply-templates select="." mode="begin"/>
+        <xsl:apply-templates/>
+        <xsl:apply-templates select="." mode="end"/>
+	<!--<xsl:apply-templates select="." mode="begin"/>
+        <xsl:apply-templates select="." mode="end"/>-->
   </xsl:template>
+  <xsl:template match="ltx:subsection">
+	<xsl:text>===</xsl:text>
+	<xsl:value-of select="string(./ltx:title/text())"/>
+	<xsl:text>===</xsl:text>
+<xsl:text>&#x0A;</xsl:text>
+	<xsl:apply-templates/>
+  </xsl:template>
+  <xsl:template match="ltx:subsubsection">
+	<xsl:text>====</xsl:text>
+	<xsl:value-of select="string(./ltx:title/text())"/>
+	<xsl:text>====</xsl:text>
+<xsl:text>&#x0A;</xsl:text>
+	<xsl:apply-templates/>
 
+  </xsl:template>
 
   <xsl:template match="ltx:abstract">
     <xsl:text>&#x0A;</xsl:text>
@@ -216,9 +243,10 @@
   </func:function>
 
   <xsl:template match="ltx:title">
+    <!--<xsl:apply-templates/-->
     <!-- Skip title, if the parent has a titlepage! -->
     <xsl:if test="not(parent::*/child::ltx:titlepage)">    
-      <xsl:text>&#x0A;</xsl:text>
+      <!--<xsl:text>&#x0A;</xsl:text>-->
       <!-- In html5, could have wrapped in hgroup, but that was deprecated -->
       <xsl:call-template name="maketitle"/>
     </xsl:if>
@@ -239,16 +267,16 @@
     </xsl:element>
   </xsl:template>
 
-  <xsl:template match="ltx:title" mode="classes">
+  <!--<xsl:template match="ltx:title" mode="classes">
     <xsl:apply-imports/>
     <xsl:text> </xsl:text>
     <xsl:value-of select="concat('ltx_title_',local-name(..))"/>
-  </xsl:template>
+  </xsl:template>-->
 
   <!-- theorem & proof titles aren't quite the same as sectional ones...?
        However, need to define it here, so it's precedence against
        plain ole ltx:title can be better controlled-->
-  <xsl:template match="ltx:theorem/ltx:title | ltx:proof/ltx:title">
+  <!--<xsl:template match="ltx:theorem/ltx:title | ltx:proof/ltx:title">
     <xsl:text>&#x0A;</xsl:text>
     <xsl:element name="h6" namespace="{$html_ns}">
       <xsl:call-template name="add_id"/>
@@ -257,27 +285,42 @@
       <xsl:apply-templates/>
       <xsl:apply-templates select="." mode="end"/>
     </xsl:element>
-  </xsl:template>
+  </xsl:template>-->
 
   <!-- Convert a title to an <h1>..<h6>, with appropriate classes and content.
        In html5, IFF section/article elements are used, we can (& should?) use only h1.
        The title chunk also contains authors, subtitles, etc. -->
   <xsl:template name="maketitle"> <!-- {f:if($USE_HTML5,'h1',concat('h',f:section-head-level(parent::*)))}"-->
-    <xsl:element
+    <xsl:if test="@font='bold'">
+    <!--<xsl:element
         name="{f:if($USE_HTML5,'h1',concat('h',f:section-head-level(parent::*)))}" 
         namespace="{$html_ns}">
       <xsl:call-template name="add_id"/>
       <xsl:call-template name="add_attributes"/>
       <xsl:apply-templates select="." mode="begin"/>
-      <xsl:apply-templates/>
-    </xsl:element>
+      <xsl:apply-templates select="*[local-name() != 'ltx:tag']"/>
+    </xsl:element>-->
+	<xsl:text>'''</xsl:text>
+	<xsl:apply-templates/>
+	<xsl:text>'''</xsl:text>
+<xsl:text>&#x0A;</xsl:text>
+    </xsl:if>
+	<xsl:if test="@font='italic'">
+        <xsl:text>''</xsl:text>
+	<xsl:apply-templates/>
+	<xsl:text>''</xsl:text>
+<xsl:text>&#x0A;</xsl:text>
+    </xsl:if>
     <!-- include parent's author, subtitle & date (if any)-->
-    <xsl:call-template name="authors"/>
+    <xsl:apply-templates select="*[local-name() != 'tag']"/>
+
+    <!--<xsl:call-template name="authors"/>
     <xsl:apply-templates select="../ltx:subtitle" mode="intitle"/>
     <xsl:apply-templates select="../ltx:date" mode="intitle"/>
-    <xsl:apply-templates select="." mode="end"/>
-    <xsl:text>&#x0A;</xsl:text>
-    <xsl:apply-templates select="parent::*" mode="auto-toc"/>
+    <xsl:apply-templates select="." mode="end"/>-->
+    <xsl:apply-templates select="*[local-name() != 'tag']"/>
+    <!--<xsl:text>&#x0A;</xsl:text>--><!--
+    <xsl:apply-templates select="parent::*" mode="auto-toc"/>-->
   </xsl:template>
 
   <!-- try to accomodate multiple authors in single block, vs each one as a block -->

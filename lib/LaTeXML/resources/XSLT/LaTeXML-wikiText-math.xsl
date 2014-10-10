@@ -44,11 +44,16 @@
   <xsl:template match="ltx:Math" mode="as-WikiMathTag">
     <xsl:element name="math">
       <!-- copy id, class, style from PARENT ltx:Math -->
-      <xsl:call-template name="add_id"/>
-      <xsl:call-template name="add_attributes"/>
+      <!--<xsl:call-template name="add_id"/>
+      <xsl:call-template name="add_attributes"/>-->
       <!-- but copy OTHER m:math attributes -->
 	<xsl:value-of disable-output-escaping='yes' select="@tex"/>
     </xsl:element>
+    <!--<xsl:if test="following-sibling::comment()[1]">
+	   <math>
+			 <xsl:value-of select="following-sibling:comment()[1]"/>
+	   </math>
+    </xsl:if>-->
   </xsl:template>
 
   <!-- Copy MathML, as is -->

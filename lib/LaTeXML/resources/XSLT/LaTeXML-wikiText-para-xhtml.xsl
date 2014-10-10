@@ -27,15 +27,15 @@
   <xsl:strip-space elements="ltx:para ltx:inline-para"/>
 
   <xsl:template match="ltx:para">
-    <xsl:text>&#x0A;</xsl:text>
-    <xsl:element name="div" namespace="{$html_ns}">
+    <!--<xsl:text>&#x0A;</xsl:text>-->
+    <!--<xsl:element name="div" namespace="{$html_ns}">
       <xsl:call-template name="add_id"/>
       <xsl:call-template name="add_attributes"/>
-      <xsl:apply-templates select="." mode="begin"/>
+      <xsl:apply-templates select="." mode="begin"/>-->
       <xsl:apply-templates/>
-      <xsl:apply-templates select="." mode="end"/>
+      <!--<xsl:apply-templates select="." mode="end"/>
       <xsl:text>&#x0A;</xsl:text>
-    </xsl:element>
+    </xsl:element>-->
   </xsl:template>
 
   <xsl:template match="ltx:inline-para">

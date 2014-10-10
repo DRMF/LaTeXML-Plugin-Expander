@@ -87,7 +87,7 @@
   </xsl:template>
 
   <xsl:template match="ltx:break">
-    <xsl:text>&#x0A;</xsl:text>
+    <!--<xsl:text>&#x0A;</xsl:text>-->
     <xsl:element name="br" namespace="{$html_ns}">
       <xsl:call-template name="add_attributes"/>
       <xsl:apply-templates select="." mode="begin"/>

@@ -1,7 +1,8 @@
-'''bold text''' <br/> ''italic text''
-==section1 ==
-===subsection2 ===
-==== level3 ====
+'''bold text'''
+''italic text''
+==section1==
+===subsection2===
+====level3====
 <pre>''ignores''</pre>
 * bullet1
 * bullet2 
