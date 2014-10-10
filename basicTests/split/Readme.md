@@ -21,6 +21,7 @@ Process:
 
 If a comment was found, it would select the data in the comment and place in a paragraph tag.
     
-Bugs:
+Bugs and future issues:
   latexml creates comments for every 25 lines in .tex files so if this happens to be after a math tag, this is also included.
   Comments were not formatted for readability, it is exactly as is in the latex file
+  Comments not appearing in merged file, will be right justified
