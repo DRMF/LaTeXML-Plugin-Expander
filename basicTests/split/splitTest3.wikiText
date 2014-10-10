@@ -1,0 +1,9 @@
+==Trigonometry==
+
+<math>e^{2i\pi x}=1</math>
+
+<math>\sin(x)=\sin(y)</math>
+==Algebra==
+
+<math>x+1=2</math>
+

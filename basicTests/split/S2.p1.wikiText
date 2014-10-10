@@ -1,0 +1,4 @@
+
+<math>x+1=2</math>
+<p> %**** split.tex Line 25 **** 
+     %&ldquo;substitution&ndash;$x=1$ &#733;</p>

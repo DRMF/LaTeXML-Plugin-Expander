@@ -1,0 +1,7 @@
+'''bold text'''
+''italic text''
+
+
+<ul>
+<li><span href="S1" title="1 section1"><span class=" ltx_ref_title">1section1</span></span></li>
+</ul>

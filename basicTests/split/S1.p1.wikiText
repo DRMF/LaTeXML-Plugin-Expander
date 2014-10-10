@@ -1,0 +1,3 @@
+
+<math>e^{2i\pi x}=1</math>
+<p> %&ldquo;constraint&ndash;$x&ldquo;in&ldquo;mathbf Z$&#733; </p>

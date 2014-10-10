@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?latexml searchpaths="/home/asm1/Documents/LaTeXML-Plugin-WikiText/basicTests"?>
+<?latexml class="article" options="10pt,a4paper"?>
+<?latexml package="inputenc" options="latin1"?>
+<?latexml package="amsmath"?>
+<?latexml package="amssymb"?>
+<?latexml package="graphicx"?>
+<?latexml RelaxNGSchema="LaTeXML"?>
+<document xmlns="http://dlmf.nist.gov/LaTeXML">
+  <resource src="LaTeXML.css" type="text/css"/>
+  <resource src="ltx-article.css" type="text/css"/>
+  <section refnum="1" xml:id="S1">
+    <title><tag close=" ">1</tag>Trigonometry</title>
+    <para xml:id="S1.p1">
+      <p><Math mode="inline" xml:id="S1.p1.m1" tex="e^{2i\pi x}=1" text="e ^ (2 * i * pi * x) = 1"><XMath><XMApp><XMTok meaning="equals" role="RELOP">=</XMTok><XMApp><XMTok role="SUPERSCRIPTOP" scriptpos="post2"/><XMTok role="UNKNOWN" font="italic">e</XMTok><XMApp><XMTok meaning="times" role="MULOP">⁢</XMTok><XMTok meaning="2" role="NUMBER">2</XMTok><XMTok role="UNKNOWN" font="italic">i</XMTok><XMTok name="pi" role="UNKNOWN" font="italic">π</XMTok><XMTok role="UNKNOWN" font="italic">x</XMTok></XMApp></XMApp><XMTok meaning="1" role="NUMBER">1</XMTok></XMApp></XMath></Math>
+<!-- %“constraint–$x“in“mathbf Z$˝ --></p>
+    </para>
+    <para xml:id="S1.p2">
+      <p><Math mode="inline" xml:id="S1.p2.m1" tex="\sin(x)=\sin(y)" text="sine@(x) = sine@(y)"><XMath><XMApp><XMTok meaning="equals" role="RELOP">=</XMTok><XMApp><XMTok argclose=")" argopen="(" meaning="sine" role="TRIGFUNCTION">sin</XMTok><XMTok role="UNKNOWN" font="italic">x</XMTok></XMApp><XMApp><XMTok argclose=")" argopen="(" meaning="sine" role="TRIGFUNCTION">sin</XMTok><XMTok role="UNKNOWN" font="italic">y</XMTok></XMApp></XMApp></XMath></Math>
+<!-- %“constraint– $x=y+2n“pi,$ $n“in“mathbf Z$˝ --></p>
+    </para>
+  </section>
+  <section refnum="2" xml:id="S2">
+    <title><tag close=" ">2</tag>Algebra</title>
+    <para xml:id="S2.p1">
+      <p><Math mode="inline" xml:id="S2.p1.m1" tex="x+1=2" text="x + 1 = 2"><XMath><XMApp><XMTok meaning="equals" role="RELOP">=</XMTok><XMApp><XMTok meaning="plus" role="ADDOP">+</XMTok><XMTok role="UNKNOWN" font="italic">x</XMTok><XMTok meaning="1" role="NUMBER">1</XMTok></XMApp><XMTok meaning="2" role="NUMBER">2</XMTok></XMApp></XMath></Math>
+<!-- %“substitution–$x=1$ ˝ --></p>
+    </para>
+  </section>
+</document>

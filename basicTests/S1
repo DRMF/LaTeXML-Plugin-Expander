@@ -1,0 +1,17 @@
+==section1==
+===subsection2===
+====level3====
+<pre>
+``ignores''
+</pre>
+*bullet1
+*bullet2
+#number1
+#number2
+line one 
+<br>line two 
+<br><math>e^{i\pi}=-1</math>
+<center>centered text</center>
+<big>BIG TEXT</big>
+<small>small text</small>
+

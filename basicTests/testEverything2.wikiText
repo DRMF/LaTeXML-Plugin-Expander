@@ -1,0 +1,19 @@
+'''bold text'''
+''italic text''
+==section1==
+===subsection2===
+====level3====
+<pre>
+``ignores''
+</pre>
+<math xmlns:m="http://www.w3.org/1998/Math/MathML"> %&lsquo;&lsquo;don&rsquo;t ignore&rsquo;&rsquo; </math>*bullet1
+*bullet2
+#number1
+#number2
+<math xmlns:m="http://www.w3.org/1998/Math/MathML"> %**** document.tex Line 25 **** </math>line one 
+<br>line two 
+<br><math>e^{i\pi}=-1</math>
+<center>centered text</center>
+<big>BIG TEXT</big>
+<small>small text</small>
+
